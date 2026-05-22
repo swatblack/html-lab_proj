@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Обо мне: Главная</title>
+    <link rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=375"/> <!-- ОДИН ТЭГ испортил мне жизнь --!>
+	<script> 
+	<!-- счёт посещения при загрузке страницы -->
+	if (localStorage.visitcount) {
+		localStorage.visitcount = Number(localStorage.visitcount) + 1;
+		}
+	else {
+		localStorage.visitcount = 1;
+		}
+	</script>
+</head>
+
+
+<body>
+    <header class="desktop">
+        <nav><a href="lab1-main.html" class="currentpage">Главная</a><a href="lab1-interests.html">Мои интересы</a><a href="lab1-portfolio.html">Портфолио</a><a href="lab1-contacts.html">Контакты</a></nav>
+    </header>
+	<header class="mobile">
+		<label>
+			<input type="checkbox" id="bmenutog"></input>
+			☰
+			<nav id="bmenu"><a href="lab1-main.html" class="currentpage">Главная</a><br><a href="lab1-interests.html">Мои интересы</a><br><a href="lab1-portfolio.html">Портфолио</a><br><a href="lab1-contacts.html">Контакты</a><br><b>Сергей © 2026</b></nav>
+		</label>
+    </header>
+    <h1>Сайт Аксёнова Сергея Евгеньевича</h1>
+    <h2>Основная информация</h2>
+	<main id="mainid">
+		<div>Я - Аксёнов Сергей Евгеньевич, студнт баклавар ТюмГу, учусь в ШКН на направление Информационные Системы и Технологии. Этот сайт создан для изучения HTML.</div>
+		<p id="counterframe">Вы зашли на эту страницу <span id="count"></span> раз!</p>
+		<script>document.getElementById("count").innerHTML = localStorage.visitcount</script>
+		<figure class="classtest">
+			<img src="mybedroom.png" alt="спальная" width="600" height="400">
+			<figcaption>Моя спальная.</figcaption>
+		</figure>
+		<p>Моя самая любимая игровая площадка - <a target="_blank" href="https://store.steampowered.com">Steam!</a></p>
+	</main>
+    <footer class="desktop">
+        <nav><a href="lab1-main.html" class="currentpage">Главная</a><a href="lab1-interests.html">Мои интересы</a><a href="lab1-portfolio.html">Портфолио</a><a href="lab1-contacts.html">Контакты</a></nav>
+        <b>Сергей © 2026</b>
+    </footer>
+	<!-- <script src="scripts.js"></script> -->
+</body>
+
+
+</html>
