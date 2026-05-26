@@ -7,13 +7,62 @@
     <link rel="stylesheet" href="styles.css">
 	<meta name="viewport" content="width=device-width"/> <!-- ОДИН ТЭГ испортил мне жизнь --!>
 	<script> 
-	<!-- счёт посещения при загрузке страницы -->
+	<!-- счёт посещения при загрузке страницы [мило и компактно]--!>
 	if (localStorage.visitcount) {
 		localStorage.visitcount = Number(localStorage.visitcount) + 1;
-		}
+	}
 	else {
 		localStorage.visitcount = 1;
+	}
+	<!-- трэкинг времени [длинно и отвратительно] ТОЛЬКО ЧТО УЗНАЛ ЧТО localStorage НЕ РАБОТАЕТ БЛИН С МАССИВАМИ! ПЕРЕДЕЛЫВАТЬ ВЫСЁ СУУУКАААА--!>
+
+	function tick(v) {
+		return v + 1;
+	}
+
+	function logtime(a) {
+		localStorage.setItem("staytimes", JSON.stringify(a));
+	}
+
+	let accessed;
+	if (localStorage.getItem("staytimes")) {
+		accessed = JSON.parse(localStorage.getItem("staytimes"));
+		accessed.push(0);
+	} else {
+		accessed = [0];
+	}
+
+	let currentIndex = accessed.length - 1;
+
+	setInterval(function() {
+		accessed[currentIndex] = tick(accessed[currentIndex]);
+	}, 1000);
+
+	window.addEventListener("beforeunload", function() {
+		if (accessed.length >= 15) {
+			accessed = accessed.slice(6, 16);
 		}
+		logtime(accessed);
+	});
+
+	function displayavgtime(o) {
+		if (o.length == 0) {
+			return 0;
+		} else {
+			var sum = 0;
+			for (let i = 0; i < o.length; i++) {
+				sum = sum + o[i];
+			}
+			let avg = sum / o.length;
+			let avgstr = "";
+			if (avg > 60) {
+				avgstr = `${Math.floor(avg/60)} минут ${Math.floor(avg%60)} секунд`;
+			} else {
+				avgstr = `${Math.floor(avg)} секунд`;
+			}
+			return avgstr;
+		}
+	}
 	</script>
 </head>
 
@@ -33,8 +82,11 @@
     <h2>Основная информация</h2>
 	<main id="mainid">
 		<div>Я - Аксёнов Сергей Евгеньевич, студнт баклавар ТюмГу, учусь в ШКН на направление Информационные Системы и Технологии. Этот сайт создан для изучения HTML.</div>
-		<p id="counterframe">Вы зашли на эту страницу <span id="count"></span> раз!</p>
-		<script>document.getElementById("count").innerHTML = localStorage.visitcount</script>
+		<p id="counterframe">Вы зашли на эту страницу <span id="count"></span> раз!<br/>Ваше среднее время нахождения на этой странице: <span id="avg"></span></p>
+		<script>
+		document.getElementById("count").innerHTML = localStorage.visitcount;
+		document.getElementById("avg").innerHTML = displayavgtime(accessed);
+		</script>
 		<figure class="classtest">
 			<img src="mybedroom.png" alt="спальная" width="600" height="400">
 			<figcaption>Моя спальная.</figcaption>
