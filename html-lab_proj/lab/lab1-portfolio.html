@@ -5,7 +5,7 @@
     <title>Обо мне: Портфолио</title>
     <link rel="stylesheet" href="styles.css">
 	<script src="kalkalator.js"></script>
-	<meta name="viewport" content="width=375"/>
+	<meta name="viewport" content="width=device-width"/>
 </head>
 
 <body>
@@ -43,6 +43,7 @@
 		</div>
 		<h2>А теперь - калькулятор для демонстрации моих навыков Javascript.</h2>
 		<div id="calculator">
+			<div id="calcdisplayop"><span id="calcoutputop"></span></div>
 			<div id="calcdisplay"><span id="calcoutput"></span></div>
 			<input type="button" class="calcbutton" id="calcC" value="C" onclick="clearCalc()"></input>
 			<input type="button" class="calcbuttona" value="." onclick="addValue('.')"></input>
