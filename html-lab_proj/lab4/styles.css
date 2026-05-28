@@ -72,10 +72,12 @@ h2, h2 > a
 {
 	margin-top: 5%
 }
+/*
 div p 
 {
 	height: 1000px;
 }
+*/
 .mobile 
 {
 	display: none;
@@ -210,6 +212,8 @@ div p
 {
 	height:auto;
 	display:inline-block;
+	word-wrap:break-word;
+	max-width: 650px;
 }
 .namefield
 {
@@ -274,6 +278,10 @@ div p
 	{
 		width:30vw;
 	}
+	.commentcontent
+	{
+		max-width:550px;
+	}
 }
 @media only screen and (max-width: 550px)
 {
@@ -309,6 +317,7 @@ div p
 		position: fixed;
 		padding: 35px;
 		opacity: 0.8;
+		background-color:white;
 	}
 	.mobile2
 	{
@@ -329,10 +338,6 @@ div p
 	#bmenutog:checked + #bmenu
 	{
 		display: block;
-	}
-	#bmenutog:checked + .mobile
-	{
-		opacity:1;
 	}
 	#cardcontainer
 	{
@@ -373,6 +378,10 @@ div p
 	{
 		display:inline;
 	}
+		.commentcontent
+	{
+		max-width:260px;
+	}
 	#uploadav
 	{
 		display:none; /*я ненавижу мобильных пользователей, они НЕ ЗАСЛУЖИВАЮТ аватарок*/
@@ -380,5 +389,13 @@ div p
 	#ihatemobileusers
 	{
 		display:none;
+	}
+	#fio
+	{
+		width:300px;
+	}
+	#search-filter
+	{
+		width:250px;
 	}
 }
