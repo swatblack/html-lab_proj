@@ -186,112 +186,41 @@ div p
 	grid-column: span 3;
 	justify-self: stretch;
 }
-/* оказывается я обкакался с первым шагом так что теперь надо всё ПЕРЕДЕЛЫВАТЬ!!!!!! (надо было тэг viewport добавлять в html)
-@media screen and (width <= 768px) and (width >= 550px) <СТАРЫЙ ПЛАНШЕТНЫЙ>
+#commentcontainer
 {
-	#cardcontainer
-	{
-		grid-template-columns: auto auto;
-	}
-	#centerintablet
-	{
-		grid-column: span 2;
-		justify-self: center;
-		width: 50%;
-	}
-	* 
-	{
-		line-height: 120%;
-		font-size: 105%;
-	}
-	main 
-	{
-		margin-left: 3%;
-		margin-right: 3%;
-	}
-	div p 
-	{
-		height: auto;
-	}
-	header
-	{
-		position:sticky;
-		left:0;
-		width:12vh;
-	}
-	nav a 
-	{
-		margin-top: 2vh;
-		margin-bottom: 2vh;
-	}
+	border:ridge green 5px;
+	background-color:#95B08B;
+	margin-top:5%;
 }
-
-@media screen and (width <= 550px) <СТАРЫЙ МОБИЛЬНЫЙ>
+.comment
 {
-	* 
-	{ 
-		font-size: 130%;
-		line-height: 120%;
-	}
-	main 
-	{
-		margin-left: 3%;
-		margin-right: 3%;
-	}
-	div p 
-	{
-		height: auto;
-	}
-	.classtest img
-	{
-		width: 870px;
-		height: 580px;
-	}
-	h1, h2
-	{
-		margin-top: 10%;
-		font-size: 225%;
-	}
-	.desktop
-	{
-		display: none;
-	}
-	.mobile
-	{
-		display: block;
-		position: absolute;
-		padding: 35px;
-	}
-	.mobile2
-	{
-		display: block;
-	}
-	#bmenu
-	{
-		display: none;
-	}
-	#bmenu a
-	{
-		margin-top:6%;
-	}
-	#bmenutog
-	{
-		display:none;
-	}
-	#bmenutog:checked + #bmenu
-	{
-		display: block;
-	}
-	#cardcontainer
-	{
-		display: grid;
-		grid-template-columns: auto;
-	}
-	#cardcontainer p
-	{
-		font-size: 100%;
-	}
-}*/
+	margin:5%;
+	border: solid black 5px;
+	background-color: white;
+	padding:20px;
+	min-height:100px;
+}
+.commenticon
+{
+	float:left;
+}
+.commentcontent
+{
+	height:auto;
+	display:inline-block;
+}
+.namefield
+{
+	height:auto;
+	float:left;
+	margin-left: 20px;
+	border: black 2px solid;
+	padding: 2px;
+}
+#messagemobile
+{
+	display:none;
+}
 @media only screen and (max-width: 768px) and (min-width: 550px)
 {
 	#cardcontainer
@@ -424,24 +353,30 @@ div p
 		margin:auto;
 		width:70%;
 	}
+	.namefield
+	{
+		margin:auto;
+		font-size:80%;
+		float:none;
+	}
+	.commenticon
+	{
+		float:none;
+	}
+	#message
+	{
+		display:none;
+	}
+	#messagemobile
+	{
+		display:inline;
+	}
+	#uploadav
+	{
+		display:none; /*я ненавижу мобильных пользователей, они НЕ ЗАСЛУЖИВАЮТ аватарок*/
+	}
+	#ihatemobileusers
+	{
+		display:none;
+	}
 }
-/*
-nav ul {
-	list-style-type: none;
-	margin: auto;
-	padding: 0;
-	overflow:hidden;
-	width: 20%;
-}
-nav ul li {
-	float: left;
-	border-left: 5px, ridge;
-	border-right: 5px, ridge;
-	padding: 5px;
-	background-color: #F54927;
-}
-nav ul li a.active {
-	background-color: green;
-	text-decoration: none;
-}
-*/
