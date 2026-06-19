@@ -20,7 +20,28 @@
             </select>
         </div>
         <div id="cardcontainer"></div>
-        <h2>А теперь - калькулятор для демонстрации моих навыков Javascript.</h2>
+		<h3>Таблица данных персонажей из "Рик и Морти"</h3>
+        <div id="table-controls">
+            <input type="text" id="table-search" placeholder="Поиск по имени..." style="padding: 8px; margin: 10px;">
+            <select id="status-filter" style="padding: 8px; margin: 10px;">
+                <option value="">Все статусы</option>
+                <option value="Alive">Жив</option>
+                <option value="Dead">Мёртв</option>
+                <option value="unknown">Неизвестно</option>
+            </select>
+            <select id="gender-filter" style="padding: 8px; margin: 10px;">
+                <option value="">Все полы</option>
+                <option value="Male">Мужской</option>
+                <option value="Female">Женский</option>
+                <option value="Genderless">Безполый</option>
+                <option value="unknown">Неизвестно</option>
+            </select>
+            <button id="load-table-data" style="padding: 8px 16px; margin: 10px; cursor: pointer;">Загрузить данные</button>
+        </div>
+        <div id="table-container">
+            <p style="padding: 20px;">Нажмите "Загрузить данные", чтобы получить информацию о персонажах</p>
+        </div>
+        <h2>А теперь - калькулятор.</h2>
         <div id="calculator-placeholder"></div>
     </main>
     <footer id="footer-placeholder"></footer>

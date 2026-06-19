@@ -79,6 +79,11 @@ export class CommentSystem {
             const useDefault = confirm('Размер картинки превышает 5МБ!\nИспользовать аватарку по умолчанию?');
             return useDefault ? DEFAULT_AVATAR : null;
         }
+		
+		if (!['png', 'jpeg', 'jpg', 'bmp', 'gif'].includes(file.name.split('.').pop())){//если расширение файла не является одним из перечисленных
+			const useDefault = confirm('Файл не подходящего формата!\nИспользовать аватарку по умолчанию?');
+            return useDefault ? DEFAULT_AVATAR : null;
+		}
         
         return new Promise((resolve) => {
             const reader = new FileReader();
